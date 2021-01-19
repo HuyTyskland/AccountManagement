@@ -8,6 +8,9 @@
 #include<iostream>
 #include "Account.h"
 #include "Admin.h"
+#include "User.h"
+#include "FileHandler.h"
+#include "AccountManager.h"
 
 using namespace std;
 
