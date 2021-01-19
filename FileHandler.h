@@ -8,10 +8,18 @@
 #ifndef FILEHANDLER_H_
 #define FILEHANDLER_H_
 
+#include<vector>
+using namespace std;
+
 class FileHandler {
 public:
+	struct Account{
+		string ID;
+		string PW;
+	};
+
 	FileHandler();
-	void readFile();
+	vector<Account> readFile(string);
 	void writeFile();
 	void updateFile();
 };
