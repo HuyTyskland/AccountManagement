@@ -7,6 +7,7 @@
 
 #include<iostream>
 #include "Account.h"
+#include "Admin.h"
 
 using namespace std;
 
