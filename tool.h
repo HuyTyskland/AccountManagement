@@ -8,9 +8,10 @@
 #ifndef TOOL_H_
 #define TOOL_H_
 
+#include "Account.h"
 using namespace std;
 
-
+void printList(vector<Account>);
 int returnHyphenIndex(string);
 
 

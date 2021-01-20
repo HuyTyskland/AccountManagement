@@ -6,7 +6,9 @@
  */
 #include<iostream>
 #include<string>
+#include<vector>
 #include "tool.h"
+#include "Account.h"
 
 using namespace std;
 
@@ -20,4 +22,8 @@ int returnHyphenIndex(string line)
 }
 
 
-
+void printList(vector<Account> listAccount)
+{
+	for(auto it = listAccount.begin(); it != listAccount.end(); ++it)
+		cout << "ID: " << (*it).returnID() << " PW: " << (*it).returnPW() << endl;
+}
