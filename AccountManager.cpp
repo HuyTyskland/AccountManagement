@@ -27,3 +27,15 @@ vector<Account> AccountManager::returnAccount(string whichFile)
 	FileHandler aFileHandler;
 	return aFileHandler.readFile(whichFile);
 }
+
+vector<Account> AccountManager::getAccountInfo()
+{
+	vector<Account> anAccount;
+	anAccount.push_back(Account());
+	anAccount[0].setInfo(anAccount[0].getID(), anAccount[0].getPW());
+}
+
+bool AccountManager::isAccountExist(string ID, string PW, vector<Account> listAccount)
+{
+	return isFound(ID, PW, listAccount);
+}
