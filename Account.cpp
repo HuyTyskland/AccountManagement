@@ -42,3 +42,19 @@ void Account::showInfo()
 {
 	cout << "Identification: " << ID << " Password: " << PW << endl;
 }
+
+string Account::getID()
+{
+	string Identification;
+	cout << "\nID: ";
+	cin >> Identification;
+	return Identification;
+}
+
+string Account::getPW()
+{
+	string Password;
+	cout << "\nPW: ";
+	cin >> Password;
+	return Password;
+}

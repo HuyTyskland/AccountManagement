@@ -17,6 +17,8 @@ public:
 	void setInfo(string, string);
 	string returnID();
 	string returnPW();
+	string getID();
+	string getPW();
 private:
 	string ID;
 	string PW;
