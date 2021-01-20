@@ -39,3 +39,9 @@ vector<Account> FileHandler::readFile(string whichFile)
 	}
 	return listAccount;
 }
+
+void FileHandler::writeFile(vector<Account> listAccount, string whichFile)
+{
+	fstream myfile;
+
+}

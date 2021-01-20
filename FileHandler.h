@@ -18,7 +18,7 @@ public:
 
 	FileHandler();
 	vector<Account> readFile(string);
-	void writeFile();
+	void writeFile(vector<Account>, string);
 	void updateFile();
 };
 
