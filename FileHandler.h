@@ -11,12 +11,10 @@
 #include<vector>
 using namespace std;
 
+
 class FileHandler {
+
 public:
-	struct Account{
-		string ID;
-		string PW;
-	};
 
 	FileHandler();
 	vector<Account> readFile(string);

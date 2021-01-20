@@ -9,8 +9,10 @@
 #define ACCOUNTMANAGER_H_
 
 class AccountManager {
+
 public:
 	AccountManager();
+	vector<Account> returnAccount(string);
 };
 
 #endif /* ACCOUNTMANAGER_H_ */

@@ -22,7 +22,7 @@ FileHandler::FileHandler() {
 
 }
 
-vector<FileHandler::Account> FileHandler::readFile(string whichFile)
+vector<Account> FileHandler::readFile(string whichFile)
 {
 	string line;
 	vector<Account> listAccount;
@@ -34,8 +34,7 @@ vector<FileHandler::Account> FileHandler::readFile(string whichFile)
 	{
 		int hyphenIndex = returnHyphenIndex(line);
 		listAccount.push_back(Account());
-		listAccount[accountIndex].ID = line.substr(0, hyphenIndex);
-		listAccount[accountIndex].PW = line.substr(hyphenIndex + 1, line.length());
+		listAccount[accountIndex].setInfo(line.substr(0, hyphenIndex),line.substr(hyphenIndex + 1, line.length()));
 		accountIndex++;
 	}
 	return listAccount;
