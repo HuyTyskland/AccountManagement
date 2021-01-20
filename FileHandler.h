@@ -19,7 +19,7 @@ public:
 	FileHandler();
 	vector<Account> readFile(string);
 	void writeFile(vector<Account>, string);
-	void updateFile();
+	void createFile();
 };
 
 #endif /* FILEHANDLER_H_ */

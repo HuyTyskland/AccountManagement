@@ -43,5 +43,18 @@ vector<Account> FileHandler::readFile(string whichFile)
 void FileHandler::writeFile(vector<Account> listAccount, string whichFile)
 {
 	fstream myfile;
+	if (whichFile == "data")
+		myfile.open("data.txt");
+	for (auto it = listAccount.begin(); it != listAccount.end(); ++it)
+		myfile << (*it).returnID() << "-" << (*it).returnPW() << "\n";
+	myfile.close();
+}
 
+void FileHandler::createFile()
+{
+	remove("data.txt");
+	rename("temp.txt","data.txt");
+	fstream myfile;
+	myfile.open("temp.txt", ios::out);
+	myfile.close();
 }
