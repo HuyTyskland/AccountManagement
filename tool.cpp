@@ -43,3 +43,8 @@ bool isFound(string ID, vector<Account> listAccount)
 			return true;
 	return false;
 }
+
+void insertInfo(string ID, vector<string> listAccount)
+{
+	listAccount.push_back(ID);
+}

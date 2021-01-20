@@ -15,6 +15,7 @@ void printList(vector<Account>);
 int returnHyphenIndex(string);
 bool isFound(string,string,vector<Account>);
 bool isFound(string, vector<Account>);
+void insertInfo(string, vector<string>);
 
 
 
