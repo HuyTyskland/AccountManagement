@@ -58,3 +58,14 @@ void FileHandler::createFile()
 	myfile.open("temp.txt", ios::out);
 	myfile.close();
 }
+
+vector<string> FileHandler::readFile()
+{
+	vector<string> listAccount;
+	string line;
+	fstream myfile;
+	myfile.open("deletionRequest.txt");
+	while(getline(myfile, line))
+		listAccount.push_back(line);
+	return listAccount;
+}

@@ -20,6 +20,7 @@ public:
 	vector<Account> readFile(string);
 	void writeFile(vector<Account>, string);
 	void createFile();
+	vector<string> readFile();
 };
 
 #endif /* FILEHANDLER_H_ */
