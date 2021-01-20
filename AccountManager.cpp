@@ -33,6 +33,7 @@ vector<Account> AccountManager::getAccountInfo()
 	vector<Account> anAccount;
 	anAccount.push_back(Account());
 	anAccount[0].setInfo(anAccount[0].getID(), anAccount[0].getPW());
+	return anAccount;
 }
 
 bool AccountManager::isAccountExist(string ID, string PW, vector<Account> listAccount)
