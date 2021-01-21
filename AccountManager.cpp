@@ -49,3 +49,16 @@ bool AccountManager::isAccountExist(string ID, string PW, int role)
 	delete(ptrAccMana);
 	return isFound(ID, PW, accountList);
 }
+
+void AccountManager::registerAccount(vector<Account> newAccount)
+{
+	AccountManager *ptrAccMana = new AccountManager;
+	vector<Account> listAccount = ptrAccMana->returnAccount("userData");
+	if(isPasswordValid(newAccount[0].returnPW()) && isIdentificationUnique(newAccount[0].returnID(), listAccount))
+	{
+		listAccount.push_back(Account());
+		(--listAccount.end())->setInfo(newAccount[0].returnID(), newAccount[0].returnPW());
+	}
+
+	delete(ptrAccMana);
+}

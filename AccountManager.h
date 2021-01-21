@@ -15,6 +15,7 @@ public:
 	vector<Account> returnAccount(string);
 	vector<Account> getAccountInfo();
 	bool isAccountExist(string, string, int);
+	void registerAccount(vector<Account>);
 };
 
 #endif /* ACCOUNTMANAGER_H_ */
