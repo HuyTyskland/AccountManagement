@@ -51,20 +51,18 @@ void menuAction(int choice)
 	switch (choice){
 	case 1:
 	{
-		vector<Account> adminList = ptrAccMana->returnAccount("adminData");
 		cout << "Please log in with your admin account" << endl;
 		vector<Account> adminAccount = ptrAccMana->getAccountInfo();
-		if(ptrAccMana->isAccountExist(adminAccount[0].returnID(), adminAccount[0].returnPW(), adminList))
+		if(ptrAccMana->isAccountExist(adminAccount[0].returnID(), adminAccount[0].returnPW(), choice))
 			cout << "ADMIN LOGGED IN";
 		else cout << "Your admin ID and PW are wrong" << endl;
 	}
 	break;
 	case 2:
 	{
-		vector<Account> userList = ptrAccMana->returnAccount("userData");
 		cout << "please log in with your user account" << endl;
 		vector<Account> userAccount = ptrAccMana->getAccountInfo();
-		if(ptrAccMana->isAccountExist(userAccount[0].returnID(), userAccount[0].returnPW(), userList))
+		if(ptrAccMana->isAccountExist(userAccount[0].returnID(), userAccount[0].returnPW(), choice))
 			cout << "USER LOGGED IN";
 		else cout << "Your user ID and PW are wrong" << endl;
 	}

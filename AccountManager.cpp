@@ -38,7 +38,14 @@ vector<Account> AccountManager::getAccountInfo()
 	return anAccount;
 }
 
-bool AccountManager::isAccountExist(string ID, string PW, vector<Account> listAccount)
+bool AccountManager::isAccountExist(string ID, string PW, int role)
 {
-	return isFound(ID, PW, listAccount);
+	AccountManager *ptrAccMana = new AccountManager;
+	vector<Account> accountList;
+	if(role == 1)
+		accountList = ptrAccMana->returnAccount("adminData");
+	else if(role == 2)
+		accountList = ptrAccMana->returnAccount("userData");
+	delete(ptrAccMana);
+	return isFound(ID, PW, accountList);
 }

@@ -13,6 +13,8 @@ class AccountManager {
 public:
 	AccountManager();
 	vector<Account> returnAccount(string);
+	vector<Account> getAccountInfo();
+	bool isAccountExist(string, string, int);
 };
 
 #endif /* ACCOUNTMANAGER_H_ */
