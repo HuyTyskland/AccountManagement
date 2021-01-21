@@ -76,7 +76,8 @@ void menuAction(int choice)
 		if (choice == "Yes")
 		{
 			vector<Account> newAccount = ptrAccMana->getAccountInfo();
-
+			ptrAccMana->registerAccount(newAccount);
+			cout << "Thank you very much" << endl;
 		}
 	}
 	}
