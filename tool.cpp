@@ -67,3 +67,11 @@ bool isPasswordValid(string PW)
 				&& regex_search(PW, matches, regCri4));
 	else return false;
 }
+
+bool isIdentificationUnique(string ID, vector<Account> listAccount)
+{
+	for(auto it = listAccount.begin(); it != listAccount.end(); ++it)
+		if (ID == (*it).returnID())
+			return false;
+	return true;
+}

@@ -17,6 +17,7 @@ bool isFound(string,string, vector<Account>);
 bool isFound(string, vector<Account>);
 void insertInfo(string,vector<string>);
 bool isPasswordValid(string);
+bool isIdentificationUnique(string, vector<Account>);
 
 
 
