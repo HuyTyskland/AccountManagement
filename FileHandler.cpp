@@ -31,6 +31,8 @@ vector<Account> FileHandler::readFile(string whichFile)
 		myfile.open("userData.txt");
 	if (whichFile == "adminData")
 		myfile.open("adminData.txt");
+	if (whichFile == "deletedData")
+		myfile.open("deletedData.txt");
 	int accountIndex = 0;
 	while(getline(myfile,line))
 	{
