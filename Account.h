@@ -15,8 +15,8 @@ public:
 	Account();
 	void showInfo();
 	void setInfo(string, string);
-	string returnID();
-	string returnPW();
+	string returnID() const;
+	string returnPW() const;
 	string getID();
 	string getPW();
 private:

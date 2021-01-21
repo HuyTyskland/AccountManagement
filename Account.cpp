@@ -28,12 +28,12 @@ void Account::setInfo(string Identification, string Password)
 	PW = Password;
 }
 
-string Account::returnID()
+string Account::returnID() const
 {
 	return ID;
 }
 
-string Account::returnPW()
+string Account::returnPW() const
 {
 	return PW;
 }
