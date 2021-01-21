@@ -55,7 +55,10 @@ void menuAction(int choice)
 		cout << "Please log in with your admin account" << endl;
 		vector<Account> adminAccount = ptrAccMana->getAccountInfo();
 		if(ptrAccMana->isAccountExist(adminAccount[0].returnID(), adminAccount[0].returnPW(), choice))
+		{
 			cout << "ADMIN LOGGED IN";
+			adminAction(adminMenu());
+		}
 		else cout << "Your admin ID and PW are wrong" << endl;
 	}
 	break;
@@ -122,5 +125,18 @@ void adminAction(int choice)
 			printList(ptrAccMana->returnAccount("deletionRequest"));
 		}
 		break;
+	case 4:
+		{
+			cout << "Are you sure you want to delete all accounts?" << endl;
+			cout << "Yes - No: ";
+			string sure;
+			cin >> sure;
+			if (sure == "Yes")
+			{
+				ptrAccMana->deleteAllAccount();
+				cout << "All accounts are deleted" << endl;
+			}
+			else cout << "Okay, wise choice" << endl;
+		}
 	}
 }
