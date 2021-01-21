@@ -17,7 +17,10 @@ int returnHyphenIndex(string line)
 	int index = 0;
 	for(int i = 0; i < (int)line.length(); i++)
 		if (line[i] == '-')
+		{
 			index = i;
+			break;
+		}
 	return index;
 }
 
