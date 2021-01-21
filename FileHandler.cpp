@@ -27,8 +27,10 @@ vector<Account> FileHandler::readFile(string whichFile)
 	string line;
 	vector<Account> listAccount;
 	fstream myfile;
-	if (whichFile == "data")
-		myfile.open("data.txt");
+	if (whichFile == "userData")
+		myfile.open("userData.txt");
+	if (whichFile == "adminData")
+		myfile.open("adminData.txt");
 	int accountIndex = 0;
 	while(getline(myfile,line))
 	{
@@ -37,6 +39,7 @@ vector<Account> FileHandler::readFile(string whichFile)
 		listAccount[accountIndex].setInfo(line.substr(0, hyphenIndex),line.substr(hyphenIndex + 1, line.length()));
 		accountIndex++;
 	}
+	myfile.close();
 	return listAccount;
 }
 
