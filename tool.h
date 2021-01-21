@@ -13,9 +13,10 @@ using namespace std;
 
 void printList(const vector<Account>);
 int returnHyphenIndex(string);
-bool isFound(string,string,const vector<Account>);
-bool isFound(string,const vector<Account>);
+bool isFound(string,string, vector<Account>);
+bool isFound(string, vector<Account>);
 void insertInfo(string,vector<string>);
+bool isPasswordValid(string);
 
 
 

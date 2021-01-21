@@ -7,6 +7,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
+#include<regex>
 #include "tool.h"
 #include "Account.h"
 
@@ -31,7 +32,7 @@ void printList(const vector<Account>& listAccount)
 		cout << "ID: " << (*it).returnID() << " PW: " << (*it).returnPW() << endl;
 }
 
-bool isFound(string ID, string PW,const vector<Account>& listAccount)
+bool isFound(string ID, string PW, vector<Account> listAccount)
 {
 	for(auto it = listAccount.begin(); it != listAccount.end(); ++it)
 		if ((ID == (*it).returnID()) && (PW == (*it).returnPW()))
@@ -39,7 +40,7 @@ bool isFound(string ID, string PW,const vector<Account>& listAccount)
 	return false;
 }
 
-bool isFound(string ID,const vector<Account>& listAccount)
+bool isFound(string ID, vector<Account> listAccount)
 {
 	for(auto it = listAccount.begin(); it != listAccount.end(); ++it)
 		if (ID == (*it).returnID())
@@ -50,4 +51,19 @@ bool isFound(string ID,const vector<Account>& listAccount)
 void insertInfo(string ID,vector<string> listAccount)
 {
 	listAccount.push_back(ID);
+}
+
+bool isPasswordValid(string PW)
+{
+	regex regCri1 ("[^a-zA-Z0-9]");
+	regex regCri2 ("[a-z]");
+	regex regCri3 ("[A-Z]");
+	regex regCri4 ("[0-9]");
+	smatch matches;
+	if (PW.length() >= 8) // valid number of character in password
+		return (regex_search(PW, matches, regCri1)
+				&& regex_search(PW, matches, regCri2)
+				&& regex_search(PW, matches, regCri3)
+				&& regex_search(PW, matches, regCri4));
+	else return false;
 }
