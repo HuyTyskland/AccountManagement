@@ -24,8 +24,10 @@ AccountManager::AccountManager() {
 
 vector<Account> AccountManager::returnAccount(string whichFile)
 {
-	FileHandler aFileHandler;
-	return aFileHandler.readFile(whichFile);
+	FileHandler *ptrFileHandler = new FileHandler;
+	vector<Account> listAccount = ptrFileHandler->readFile(whichFile);
+	delete(ptrFileHandler);
+	return listAccount;
 }
 
 vector<Account> AccountManager::getAccountInfo()
