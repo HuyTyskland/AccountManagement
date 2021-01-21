@@ -67,7 +67,18 @@ void menuAction(int choice)
 		else cout << "Your user ID and PW are wrong" << endl;
 	}
 	break;
+	case 3:
+	{
+		string choice;
+		cout << "Do you want to register a new account?" << endl;
+		cout << "Yes - No: ";
+		cin >> choice;
+		if (choice == "Yes")
+		{
+			vector<Account> newAccount = ptrAccMana->getAccountInfo();
 
+		}
+	}
 	}
 
 }
