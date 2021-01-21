@@ -17,10 +17,46 @@
 
 using namespace std;
 
+int printMenu();
+void menuAction(int);
+int adminMenu();
+void adminAction(int);
+
 int main()
 {
-
+	menuAction(printMenu());
 	return 0;
 }
 
+int printMenu()
+{
+	int choice = 0;
+	cout << "***************************************" << endl;
+	cout << "        WELCOME TO THE SYSTEM" << endl;
+	cout << "<><><><><><><><><><><><><><><><><><><><>" << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << "Who are you?" << endl;
+	cout << "1. Admin" << endl;
+	cout << "2. User" << endl;
+	cout << "3. Guest " << endl;
+	cin >> choice;
+	return choice;
+}
 
+void menuAction(int choice)
+{
+	AccountManager *ptrAccMana = new AccountManager;
+	switch (choice){
+	case 1:
+	{
+		vector<Account> adminList = ptrAccMana->returnAccount("adminData");
+		cout << "Please log in with your admin account" << endl;
+		vector<Account> adminAccount = ptrAccMana->getAccountInfo();
+		if(ptrAccMana->isAccountExist(adminAccount[0].returnID(), adminAccount[0].returnPW(), adminList))
+			cout << "LOGGED IN";
+	}
+	}
+
+}
