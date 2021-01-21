@@ -22,6 +22,7 @@ void menuAction(int);
 int adminMenu();
 void adminAction(int);
 
+
 int main()
 {
 	menuAction(printMenu());
@@ -81,5 +82,45 @@ void menuAction(int choice)
 		}
 	}
 	}
+	delete(ptrAccMana);
+}
 
+int adminMenu()
+{
+	int choice = 0;
+	cout << "Hello admin, what you want to do?" << endl;
+	cout << "1. Display all accounts" << endl;
+	cout << "2. Display all deleted account" << endl;
+	cout << "3. Display deletion request" << endl;
+	cout << "4. Delete all accounts" << endl;
+	cout << "5. Delete an account" << endl;
+	cout << "6. Approve deletion request" << endl;
+	cin >> choice;
+	return choice;
+}
+
+void adminAction(int choice)
+{
+	AccountManager *ptrAccMana = new AccountManager;
+	switch(choice)
+	{
+	case 1:
+		{
+			cout << "The list of accounts are: " << endl;
+			printList(ptrAccMana->returnAccount("userData"));
+		}
+		break;
+	case 2:
+		{
+			cout << "The list of deleted accounts are:" << endl;
+			printList(ptrAccMana->returnAccount("deletedData"));
+		}
+		break;
+	case 3:
+		{
+			cout << "The list of deleted accounts are: " << endl;
+			printList(ptrAccMana->returnAccount("deletionRequest"));
+		}
+		break;
+	}
 }
