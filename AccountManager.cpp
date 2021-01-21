@@ -60,7 +60,6 @@ void AccountManager::registerAccount(vector<Account> newAccount)
 		(--listAccount.end())->setInfo(newAccount[0].returnID(), newAccount[0].returnPW());
 		cout << "Your new account has been registered" << endl;
 	} else cout << "Your account info is either invalid or not unique" << endl;
-
 	delete(ptrAccMana);
 }
 

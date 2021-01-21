@@ -138,5 +138,10 @@ void adminAction(int choice)
 			}
 			else cout << "Okay, wise choice" << endl;
 		}
+		break;
+	case 5:
+		{
+
+		}
 	}
 }

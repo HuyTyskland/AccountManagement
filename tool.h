@@ -11,7 +11,7 @@
 #include "Account.h"
 using namespace std;
 
-void printList(const vector<Account>);
+void printList(vector<Account>);
 int returnHyphenIndex(string);
 bool isFound(string,string, vector<Account>);
 bool isFound(string, vector<Account>);
